@@ -6,6 +6,7 @@ img=qrcode.make(url)
 img.save('qr.png')
 print("QR generated successfully")
 
+
 # proj to download any video file with the best quality 
 !pip install yt_dlp
 import yt_dlp
@@ -13,9 +14,35 @@ link=input ("Paste the link to Download Video ")
 with yt_dlp.YoutubeDL({'format':'best'}) as yt:
   yt.download([link])
 
+
 # proj to download any audio file with best quality
 import yt_dlp
 link=input ("Paste the link to Download A ")
 with yt_dlp.YoutubeDL({'format':'bestaudio'}) as yt:
 yt.download([link])
-  
+
+
+# proj to automated tracking system
+import pandas as pd
+import matplotlib.pyplot as plt
+data = {
+    'Category': ['Food', 'Rent', 'Transport', 'Entertainment', 'Utilities'],
+    'Amount': [250, 1200, 150, 200, 100]
+}
+
+df = pd.DataFrame(data)
+
+def add_expense(category, amount):
+    global df
+    new_row = pd.DataFrame({'Category': [category], 'Amount': [amount]})
+    df = pd.concat([df, new_row], ignore_index=True)
+    print(f"Added: {category} - ${amount}")
+
+add_expense('Groceries', 85)
+
+plt.figure(figsize=(8, 6))
+plt.pie(df.groupby('Category')['Amount'].sum(), labels=df['Category'].unique(), autopct='%1.1f%%', startangle=140)
+plt.title('Monthly Expense Breakdown')
+plt.show()
+
+print(df)
