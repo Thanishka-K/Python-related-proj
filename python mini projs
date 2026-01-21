@@ -92,3 +92,20 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# Real-Time Currency Converter
+pip install requests
+import requests
+
+def convert_currency(amount, from_curr, to_curr):
+    # Using a free API
+    url = f"https://api.exchangerate-api.com/v4/latest/{from_curr}"
+    response = requests.get(url).json()
+    rate = response['rates'][to_curr]
+    
+    converted = amount * rate
+    print(f"{amount} {from_curr} is equal to {converted:.2f} {to_curr}")
+
+# Example usage
+convert_currency(100, "USD", "EUR")
