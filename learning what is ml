@@ -1,0 +1,14 @@
+In order to learn the ml concepts, the plan is:
+
+Phase 1: Foundations (Day 1–3)
+Day 1: Python for Data Science
+Learn NumPy (arrays and math) and Pandas (loading CSVs, filtering data).
+Goal: Load a dataset and calculate basic statistics (mean, median).
+
+Day 2: Data Visualization
+Learn Matplotlib and Seaborn.
+Goal: Create histograms, scatter plots, and correlation heatmaps to "see" data.
+
+Day 3: The Math "Cheat Sheet"
+Brush up on Linear Algebra (matrix multiplication) and Calculus (the concept of Gradient Descent).
+Goal: Understand how a computer "steps" toward the right answer.
