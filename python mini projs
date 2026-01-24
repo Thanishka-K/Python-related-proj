@@ -1,4 +1,4 @@
-# proj to convert any url into a QR code
+# 1) proj to convert any url into a QR code
 !pip install qrcode
 import qrcode
 url=input("Paste your url to convert into QR code ")
@@ -7,7 +7,7 @@ img.save('qr.png')
 print("QR generated successfully")
 
 
-# proj to download any video file with the best quality 
+# 2) proj to download any video file with the best quality 
 !pip install yt_dlp
 import yt_dlp
 link=input ("Paste the link to Download Video ")
@@ -15,14 +15,14 @@ with yt_dlp.YoutubeDL({'format':'best'}) as yt:
   yt.download([link])
 
 
-# proj to download any audio file with best quality
+# 3) proj to download any audio file with best quality
 import yt_dlp
 link=input ("Paste the link to Download A ")
 with yt_dlp.YoutubeDL({'format':'bestaudio'}) as yt:
 yt.download([link])
 
 
-# proj to automated tracking system
+# 4) proj to automated tracking system
 import pandas as pd
 import matplotlib.pyplot as plt
 data = {
@@ -47,7 +47,7 @@ plt.show()
 
 print(df)
 
-# proj random password generator (easy)
+# 5) proj random password generator (easy)
 import random
 import string
 
@@ -94,7 +94,7 @@ if __name__ == "__main__":
     main()
 
 
-# Real-Time Currency Converter
+# 6) Real-Time Currency Converter
 pip install requests
 import requests
 
@@ -110,7 +110,7 @@ def convert_currency(amount, from_curr, to_curr):
 # Example usage
 convert_currency(100, "USD", "EUR")
 
-# "Drink Water" Reminder
+# 7) "Drink Water" Reminder
 
 pip install plyer
 import time
@@ -124,7 +124,7 @@ while True:
     )
     time.sleep(3600) # Wait for 1 hour (3600 seconds)
 
-#Text Sentiment Analyzer
+# 8) Text Sentiment Analyzer
 from textblob import TextBlob
 
 text = input("Enter some text to analyze: ")
@@ -137,4 +137,19 @@ elif analysis.sentiment.polarity < 0:
     print("Vibe: Negative. 😟")
 else:
     print("Vibe: Neutral. 😐")
+
+# 9) Bulk Image Converter (PNG to JPG)
+pip install Pillow
+from PIL import Image
+import os
+
+folder = "./my_images"  # Change this to your folder path
+
+for filename in os.listdir(folder):
+    if filename.endswith(".png"):
+        img = Image.open(os.path.join(folder, filename))
+        rgb_img = img.convert('RGB') # Convert to RGB (required for JPG)
+        new_name = filename.replace(".png", ".jpg")
+        rgb_img.save(os.path.join(folder, new_name))
+        print(f"Converted {filename} to JPG")
 
